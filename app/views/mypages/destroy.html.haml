@@ -8,6 +8,7 @@
   = render "/shared/side-bar"
   .main-all
     .main-all__background
-      .main-all__btn
-        = link_to("ログアウト", destroy_user_session_path, method: :delete, class: "main-all__btn-text no-line")
+      = link_to(destroy_user_session_path, method: :delete, class: "no-line") do
+        .main-all__btn
+          ログアウト
 = render "/shared/footer"

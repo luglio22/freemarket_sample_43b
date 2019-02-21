@@ -14,13 +14,13 @@ $(function(){
 
       $('.progress-state--forth--line-left').css("background","#ea352d");
 
-    //会員情報　文字
+    //会員情報 文字
       $('li.member-information').css("color","#888");
 
-    //電話番号認証　丸
+    //電話番号認証 丸
       $('.progress-state--second').css("background","#ea352d");
 
-    //お届け先住所　丸
+    //お届け先住所 丸
       $('.progress-state--third').css("background","#ea352d");
 
     //支払い方法

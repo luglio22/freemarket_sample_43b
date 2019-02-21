@@ -16,8 +16,8 @@
         .product-image__upload
           = i.file_field :images, style: "display: none", class: "image-upload", id: "image-upload", multiple: "true", name: "images[image][]", remote: true
           .image-upload__text{onClick: "$('#image-upload').click();"}
-            %p ドラッグアンドドロップ
-            %p  またはクリックしてファイルをアップロード
+            %p.image-message ドラッグアンドドロップ
+            %p.image-message またはクリックしてファイルをアップロード
   // 商品名
   .product-data.box
     .title-wrapper

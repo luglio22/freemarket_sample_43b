@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only:[:main_data, :sms_confirmation, :certification, :check, :address,]
+  before_action :set_user, only:[:main_data, :sms_confirmation, :certification, :check, :address]
   require "date"
   def main_data
   end
@@ -8,6 +8,12 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = current_user
+  end
+
+  def update
+    current_user.update(users_params)
+    redirect_to root_path
   end
 
   def payments
@@ -51,7 +57,10 @@ class UsersController < ApplicationController
   end
 
   private
-    def set_user
-    @user = User.new
+  def users_params
+    params.require(:user).permit(:last_name, :first_name, :last_name_ja, :first_name_ja, :postal_code, :prefecture, :city, :add_ress, :building, :phone_number, :birthday)
+  end
+  def set_user
+  @user = User.new
   end
 end

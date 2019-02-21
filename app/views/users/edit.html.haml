@@ -11,7 +11,7 @@
       .identification-title
         .identification-title__main 本人情報の登録
         .identification-title__text お客さまのあんしん・あんぜんな取引のため、本人情報のご登録をお願いしております。
-      = form_for "#" do |f|
+      = form_for @user, url: user_path(@user) do |f|
         .identification-box
           .title-wrapper
             %span.title-small お名前
@@ -33,7 +33,7 @@
           .title-wrapper
             %span.title-small 都道府県
             %span.must-icon 必須
-          = f.select :prefecture,["---", "北海道", "沖縄"], {}, {class: "select-field"}
+          = f.select :prefecture, Prefecture.data.map{ |a| [a[:name], a[:id]]}, {}, {class: "select-field"}
         .identification-box
           .title-wrapper
             %span.title-small 市区町村
@@ -43,7 +43,7 @@
           .title-wrapper
             %span.title-small 番地
             %span.must-icon 必須
-          = f.text_field :address, class: "text-field", placeholder: "例）2丁目23-12"
+          = f.text_field :add_ress, class: "text-field", placeholder: "例）2丁目23-12"
         .identification-box
           .title-wrapper
             %span.title-small 建物名

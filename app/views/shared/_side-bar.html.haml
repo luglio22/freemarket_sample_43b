@@ -69,9 +69,10 @@
       %li.mypage-nav--list--item
         メール/パスワード
         %i.fas.fa-angle-right.fa-pull-right.fa-lg
-      %li.mypage-nav--list--item
-        本人情報
-        %i.fas.fa-angle-right.fa-pull-right.fa-lg
+      = link_to edit_user_path(current_user), class: "link-no-decoration" do
+        %li.mypage-nav--list--item
+          本人情報
+          %i.fas.fa-angle-right.fa-pull-right.fa-lg
       %li.mypage-nav--list--item
         電話番号の確認
         %i.fas.fa-angle-right.fa-pull-right.fa-lg

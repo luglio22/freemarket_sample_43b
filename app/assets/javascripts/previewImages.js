@@ -1,7 +1,7 @@
 $(document).on("turbolinks:load", function(){
   //画像の枚数に応じて枠を調節する
   function previewSize(){
-    var text = $('p');
+    var text = $(".image-message");
     var field = $('.product-image__upload');
     const threePictures = 3;
     const fourPictures = 4;
